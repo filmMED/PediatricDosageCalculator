@@ -1,0 +1,70 @@
+{
+  "Ibuprofen (Motrin, Advil)" : {
+    "100mg/5mL Age 6 months and older" : {
+      "notes": {
+        "Age Limit" : "Do not use acetaminophen under 12 weeks of age unless directed by your pediatrician because fever during the first 12 weeks of life should be documented in a medical setting. If a f\u200Bever is present, your baby needs a complete evaluation. (Exception: Fever from an immunization in a child 8 weeks of age or older. If present, please consult with your pediatrician.)",
+        "Frequency" : "Administer by mouth every 6-8 hours as needed for fever, discomfort"
+      },
+      "weights" : {
+        "2.5ml": {
+          "low": 11,
+          "high": 17
+        },
+        "3.5ml": {
+          "low": 18,
+          "high": 21
+        },
+        "5ml": {
+          "low": 22,
+          "high": 27
+        },
+        "7ml": {
+          "low": 28,
+          "high": 47
+        }
+      }
+    },
+    "Chewable tablets 50mg each" : {
+      "weights" : {
+        "4 tablets": {
+          "low": 28,
+          "high": 47
+        },
+        "5 tablets": {
+          "low": 48,
+          "high": 59
+        },
+        "6 tablets": {
+          "low": 60,
+          "high": 71
+        },
+        "8 tablets": {
+          "low": 72,
+          "high": 95
+        }
+      }
+    }
+  },
+  "Acetaminophen (Tylenol)" : {
+    "160mg/5mL" : {
+      "weights" : {
+        "2.5ml": {
+          "low": 11,
+          "high": 18
+        },
+        "3.5ml": {
+          "low": 19,
+          "high": 21
+        },
+        "5ml": {
+          "low": 22,
+          "high": 27
+        },
+        "7.5ml": {
+          "low": 28,
+          "high": 47
+        }
+      }
+    }
+  }
+}

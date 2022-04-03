@@ -1,38 +1,19 @@
-.App {
-  text-align: center;
+.fm_dosage_card {
+  padding: 25px;
+  max-width: 480px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.fm_dosage_card,
+.fm_dosage_inner {
+  display: block;
+  margin: 0 auto;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.fm_dosage_inner {
+  background: #FFFFFF;
+  box-shadow: 0 2px 11px 1px rgba(0,0,0,0.19);
+  padding: 30px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+select,
+input[type=range] {
+  width: 100%;
+  margin-bottom: 15px;
 }
