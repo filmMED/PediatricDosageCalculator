@@ -26,7 +26,7 @@ export default class App extends React.Component {
             return (
               <div className="fm_dosage_card">
                   <div className="fm_dosage_inner">
-                      <h1>Dosage Calculator</h1>
+                      <h2>Dosage Calculator</h2>
                       <p>This chart, based on your child's weight, can help determine the right dosage amount, but is no substitute for your pediatrician's advice.</p>
                       <select onChange={evt => this.updateMedication(evt)} value={this.state.Medication} >
                           <option>Select Medication</option>
@@ -36,7 +36,7 @@ export default class App extends React.Component {
                           <option>Select Type</option>
                           {this.state.MedicationTypeOptions}
                       </select>
-                      <h3>Child Weight: {this.state.childWeight} lbs</h3>
+                      <h3 className={"childWeight"}>Child Weight: <span className={"childWeightValue"}>{this.state.childWeight} lbs</span></h3>
                       <input
                           onChange={evt => this.updateChildWeight(evt)}
                           type="range"
@@ -45,8 +45,8 @@ export default class App extends React.Component {
                           max={this.state.childWeightMax}
                           value={this.state.childWeight
                       }/>
-                      <h3>Child Dosage: {this.state.dosage}</h3>
-                      <p>{this.state.MedicationNotes}</p>
+                      <h3 className={"childDosage"}>Child Dosage: <span className={"childDosageValue"}>{this.state.dosage}</span></h3>
+                      <div>{this.state.MedicationNotes}</div>
                   </div>
               </div>
             );
@@ -55,7 +55,6 @@ export default class App extends React.Component {
                 <h2>Something seems to have gone wrong please check back later!</h2>
             );
         }
-
     }
 
     updateMedication(evt) {
