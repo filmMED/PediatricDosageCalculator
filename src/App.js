@@ -30,7 +30,7 @@ export default class App extends React.Component {
                       <p>This chart, based on your child's weight, can help determine the right dosage amount, but is no substitute for your pediatrician's advice.</p>
                       <select onChange={evt => this.updateMedication(evt)} value={this.state.Medication} >
                           <option>Select Medication</option>
-                          {Object.keys(Data).map((x,y) => <option value={x} key={y}>{x}</option>)}
+                          {Object.keys(Data).map((x,y) => <option key={"med" + y} value={x}>{x}</option>)}
                       </select>
                       <select onChange={evt => this.updateMedicationType(evt)} value={this.state.MedicationType} disabled={this.state.medicationTypeDisabled}>
                           <option>Select Type</option>
@@ -65,7 +65,7 @@ export default class App extends React.Component {
         this.setState({
             Medication: val,
             MedicationTypeOptions: (medicationTypes == null) ? '' : medicationTypes.map(
-                (x,y) => <option value={x} key={y}>{x}</option>
+                (x,y) => <option key={"dosage" + y} value={x}>{x}</option>
             ),
             medicationTypeDisabled: (medicationTypes == null),
         });
