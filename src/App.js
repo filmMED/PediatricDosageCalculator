@@ -57,7 +57,7 @@ export default class App extends React.Component {
               <div className="fm_dosage_card">
                   <div className="fm_dosage_inner">
                       <h2>Dosage Calculator</h2>
-                      <p>This chart, based on your child's weight, can help determine the right dosage amount, but is no substitute for your pediatrician's advice.</p>
+                      <p>This calculator can help determine the right dosage based on the medication type and your child's weight.</p>
                       <select onChange={evt => this.updateMedication(evt)} value={this.state.Medication} >
                           <option>Select Medication</option>
                           {Object.keys(Data).map((x,y) => <option key={"med" + y} value={x}>{x}</option>)}
