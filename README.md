@@ -1,6 +1,12 @@
-# Getting Started with Create React App
+# Pediatric Dosage Calculator
+
+This is a React powered pediatric dosage calculator. It displays the recommneded dosage as well as any notes based on what is recommended.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## JSON file
+
+The JSON file holds all the information for the various medications. The file included is intended as a structure sample only.
 
 ## Available Scripts
 

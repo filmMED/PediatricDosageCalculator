@@ -1,0 +1,169 @@
+{
+  "Ibuprofen (Motrin, Advil)" : {
+    "notes": {
+      "" : "Ibuprofen (Motrin, Advil) is an over-the-counter medicine that is a fever reducer, anti-inflammatory and pain reliever. Medication strengths vary for each product, so make sure to double check the strength of your medication and use our dosage calculator below to determine the right dose based on your child’s weight.",
+      "Caution: " : "Do not give ibuprofen to babies under 6 months of age unless directed by your pediatrician. The safety of the product at that age has not been determined or approved by the FDA."
+    },
+    "100mg/5mL Age 6 months and older" : {
+      "notes": {
+        "Frequency: " : "Administer by mouth every 6-8 hours as needed for fever, discomfort"
+      },
+      "weights" : {
+        "2.5ml": {
+          "low": 11,
+          "high": 18
+        },
+        "3.5ml": {
+          "low": 19,
+          "high": 21
+        },
+        "5ml": {
+          "low": 22,
+          "high": 27
+        },
+        "7ml": {
+          "low": 28,
+          "high": 47
+        }
+      }
+    },
+    "Chewable tablets 50mg each" : {
+      "weights" : {
+        "4 tablets": {
+          "low": 48,
+          "high": 59
+        },
+        "5 tablets": {
+          "low": 60,
+          "high": 71
+        },
+        "6 tablets": {
+          "low": 72,
+          "high": 94
+        },
+        "8 tablets": {
+          "low": 95,
+          "high": 150
+        }
+      }
+    },
+    "Junior Strength tablets 100mg each" : {
+      "weights" : {
+        "2 tablets": {
+          "low": 48,
+          "high": 59
+        },
+        "2.5 tablets": {
+          "low": 60,
+          "high": 71
+        },
+        "3 tablets": {
+          "low": 72,
+          "high": 94
+        },
+        "4 tablets": {
+          "low": 95,
+          "high": 150
+        }
+      }
+    },
+    "Adult Strength tablets 200mg each" : {
+      "weights" : {
+        "4 tablets": {
+          "low": 48,
+          "high": 59
+        },
+        "5 tablets": {
+          "low": 60,
+          "high": 71
+        },
+        "6 tablets": {
+          "low": 72,
+          "high": 94
+        },
+        "8 tablets": {
+          "low": 95,
+          "high": 150
+        }
+      }
+    }
+  },
+  "Acetaminophen (Tylenol)" : {
+    "notes" : {
+      "" : "Acetaminophen (Tylenol) is an over-the-counter medicine that is a fever reducer and pain reliever.\n\nThe biggest concern with acetaminophen is improper dosing. Make sure to double check the strength of your medication and use our dosage chart to determine the right dose based on your child’s weight. In 2011, the FDA recommended that all forms of acetaminophen be made in just one strength, 160 mg/5 mL. However, some chewable tablets are available at 80 mg, so check the medication’s strength before administering it.",
+      "Caution: " : "Do not give acetaminophen to babies under 12 weeks of age unless directed by your pediatrician.",
+      "Extended-Release: " : "Do not give 650 mg oral extended-release acetaminophen to children."
+    },
+    "160mg/5mL" : {
+      "notes": {
+        "Frequency: " : "Administer by mouth every 4-6 hours as needed for fever, discomfort"
+      },
+      "weights" : {
+        "2.5ml": {
+          "low": 11,
+          "high": 18
+        },
+        "3.5ml": {
+          "low": 19,
+          "high": 21
+        },
+        "5ml": {
+          "low": 22,
+          "high": 27
+        },
+        "7.5ml": {
+          "low": 28,
+          "high": 47
+        }
+      }
+    },
+    "Chewable tablets 50mg each" : {
+      "weights" : {
+        "4 tables": {
+          "low": 56,
+          "high": 83
+        },
+        "6 tables": {
+          "low": 84,
+          "high": 111
+        },
+        "8 tables": {
+          "low": 112,
+          "high": 150
+        }
+      }
+    },
+    "Junior Strength tablets 160mg each" : {
+      "weights" : {
+        "2 tablets": {
+          "low": 56,
+          "high": 83
+        },
+        "3 tablets": {
+          "low": 84,
+          "high": 111
+        },
+        "4 tablets": {
+          "low": 112,
+          "high": 150
+        }
+      }
+    },
+    "Adult Strength tablets 325mg each" : {
+      "weights" : {
+        "1 tablets": {
+          "low": 56,
+          "high": 83
+        },
+        "1.5 tablets": {
+          "low": 84,
+          "high": 111
+        },
+        "2 tablets": {
+          "low": 112,
+          "high": 150
+        }
+      }
+    }
+  }
+}

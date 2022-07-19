@@ -8,12 +8,18 @@
   margin: 0 auto;
 }
 .fm_dosage_inner {
-  background: #FFFFFF;
   box-shadow: 0 2px 11px 1px rgba(0,0,0,0.19);
   padding: 30px;
+}
+.medicationNote {
+  margin-bottom: 1em;
 }
 select,
 input[type=range] {
   width: 100%;
   margin-bottom: 15px;
+}
+.childDosage.hidden,
+.childWeight.hidden {
+  display: none;
 }

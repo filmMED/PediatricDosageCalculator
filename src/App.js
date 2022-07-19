@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import ValidatedJsonData from './ValidateJsonData.js';
-import Data from './data.json';
+import ValidateJsonData from './ValidateJsonData.js';
+let Data, DataFetchedStarted, JSONDataIsValid;
 
 export default class App extends React.Component {
     constructor(props) {
@@ -11,6 +11,7 @@ export default class App extends React.Component {
             Medication: '',
             MedicationType: '',
             MedicationNotes: '',
+            MedicationTypeNotes: '',
             MedicationTypeOptions: [''],
             medicationTypeDisabled: true,
             childWeightDisabled: true,
@@ -18,11 +19,40 @@ export default class App extends React.Component {
             childWeightMin: 0,
             childWeightMax: 50,
             dosage: "",
+            hideDosage: true
         };
     }
 
+    /**
+     * Load the JSON data that will be used by the calculator
+     */
+    componentDidMount() {
+        if(DataFetchedStarted === undefined) {
+            DataFetchedStarted = true;
+            let parentThis = this;
+            fetch(window.fmPediatricDosageCalculatorJSONFileLocation)
+                .then(response => response.json())
+                .then(function (data) {
+                    Data = data;
+                    JSONDataIsValid = ValidateJsonData(Data);
+                    parentThis.setState({})
+                })
+                .catch(function () {
+                    // set to empty to throw error
+                    Data = "";
+                    console.log("Unable to load pediatric dosage chart data")
+                    parentThis.setState({})
+                })
+        }
+    }
+
     render() {
-        if( ValidatedJsonData === true ) {
+        // Ensure there is something there
+        if(Data === undefined) {
+            return(
+                <div className={"Loading"}>Loading Calculator</div>
+            );
+        } else if( JSONDataIsValid ) {
             return (
               <div className="fm_dosage_card">
                   <div className="fm_dosage_inner">
@@ -36,17 +66,18 @@ export default class App extends React.Component {
                           <option>Select Type</option>
                           {this.state.MedicationTypeOptions}
                       </select>
-                      <h3 className={"childWeight"}>Child Weight: <span className={"childWeightValue"}>{this.state.childWeight} lbs</span></h3>
+                      <h3 className={"childWeight"}>Child Weight <span className={"childWeightValue"}>{this.state.childWeight} lbs</span></h3>
                       <input
                           onChange={evt => this.updateChildWeight(evt)}
                           type="range"
                           step="1"
-                          disabled={this.state.childWeightDisabled} min={this.state.childWeightMin}
+                          disabled={this.state.childWeightDisabled}
+                          min={this.state.childWeightMin}
                           max={this.state.childWeightMax}
-                          value={this.state.childWeight
-                      }/>
-                      <h3 className={"childDosage"}>Child Dosage: <span className={"childDosageValue"}>{this.state.dosage}</span></h3>
-                      <div>{this.state.MedicationNotes}</div>
+                          value={this.state.childWeight}
+                      />
+                      <h3 className={"childDosage " + (this.state.hideDosage ? "hidden" : "")}>Maximum single dose <span className={"childDosageValue"}>{this.state.dosage}</span></h3>
+                      <div>{this.state.MedicationNotes}{this.state.MedicationTypeNotes}</div>
                   </div>
               </div>
             );
@@ -64,9 +95,10 @@ export default class App extends React.Component {
         this.setState({
             Medication: val,
             MedicationTypeOptions: (medicationTypes == null) ? '' : medicationTypes.map(
-                (x,y) => <option key={"dosage" + y} value={x}>{x}</option>
+                (x,y) => (x !== "notes" ? <option key={"dosage" + y} value={x}>{x}</option> : "")
             ),
             medicationTypeDisabled: (medicationTypes == null),
+            MedicationNotes: (Data[val] !== undefined && Data[val]['notes'] !== undefined) ? this.convertTheNotesToHTML(Data[val]['notes']) : ''
         });
 
         this.updateMedicationType(null, val);
@@ -85,8 +117,10 @@ export default class App extends React.Component {
             }
             this.setState({
                 MedicationType: '',
-                MedicationNotes: '',
+                MedicationTypeNotes: '',
+                childWeight: 0,
                 childWeightDisabled: true,
+                hideDosage: true
             });
             return;
         }
@@ -104,7 +138,7 @@ export default class App extends React.Component {
 
         this.setState({
             MedicationType: MedicationType,
-            MedicationNotes: ('notes' in currentData) ? this.convertTheNotesToHTML(currentData['notes']) : '',
+            MedicationTypeNotes: (currentData['notes'] !== undefined && currentData['notes'] !== undefined) ? this.convertTheNotesToHTML(currentData['notes']) : '',
             childWeightDisabled: false,
             childWeight: minWeight,
             childWeightMin: minWeight,
@@ -112,8 +146,6 @@ export default class App extends React.Component {
         });
 
         this.updateDosageCalculation(minWeight, MedicationType);
-
-        // Figure out how to deal with the slider and what not
     }
 
     updateChildWeight(evt) {
@@ -139,20 +171,18 @@ export default class App extends React.Component {
                 ) {
                     currentComponent.setState({
                         dosage: dosage,
+                        hideDosage: false,
                     });
                 }
             });
         }
     }
 
-    componentDidUpdate(PrevProps, prevState){
-        //console.log("The component updated");
-    }
-
     convertTheNotesToHTML(notes) {
         if(notes !== undefined) {
-            return Object.keys(notes).map((x) =>
-                <div className="medicationNote"><b>{x}:</b>{notes[x]}</div>)
+            console.log(notes[""]);
+            return Object.keys(notes).map((x, y) =>
+                <div className="medicationNote" key={"note" + y} style={{whiteSpace: "pre-wrap"}}><b>{x}</b>{notes[x]}</div>)
         }
     }
 };
