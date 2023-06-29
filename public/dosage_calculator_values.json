@@ -71,10 +71,6 @@
       "weights" : {
         "1 tablet": {
           "low": 48,
-          "high": 59
-        },
-        "1 tablet": {
-          "low": 60,
           "high": 71
         },
         "1.5 tablets": {
