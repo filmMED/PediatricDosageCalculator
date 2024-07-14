@@ -115,15 +115,15 @@
     },
     "Chewable tablets 50mg each" : {
       "weights" : {
-        "4 tables": {
+        "4 tablets": {
           "low": 56,
           "high": 83
         },
-        "6 tables": {
+        "6 tablets": {
           "low": 84,
           "high": 111
         },
-        "8 tables": {
+        "8 tablets": {
           "low": 112,
           "high": 150
         }
@@ -147,7 +147,7 @@
     },
     "Adult Strength tablets 325mg each" : {
       "weights" : {
-        "1 tablets": {
+        "1 tablet": {
           "low": 56,
           "high": 83
         },
@@ -157,6 +157,64 @@
         },
         "2 tablets": {
           "low": 112,
+          "high": 150
+        }
+      }
+    }
+  },
+  "Diphenhydramine (Benadryl)" : {
+    "notes" : {
+      "" : "Children's Benadryl is used for allergy relief. Ensure correct dosage based on the child's weight and age.",
+      "Caution: " : "Consult a doctor before giving Benadryl to children under 20 lbs or under 2 years of age. Do not use adult formulations for children unless instructed to do so by a doctor."
+    },
+    "Liquid 12.5 mg / 5 mL" : {
+      "weights" : {
+        "4 ml": {
+          "low": 20,
+          "high": 24
+        },
+        "5 ml": {
+          "low": 25,
+          "high": 37
+        },
+        "7.5 ml": {
+          "low": 38,
+          "high": 49
+        },
+        "10 ml": {
+          "low": 50,
+          "high": 99
+        }
+      }
+    },
+    "Chewable 12.5 mg tablets" : {
+      "weights" : {
+        "1 tablets": {
+          "low": 25,
+          "high": 37
+        },
+        "1.5 tablets": {
+          "low": 38,
+          "high": 49
+        },
+        "2 tablets": {
+          "low": 50,
+          "high": 99
+        },
+        "4 tablets": {
+          "low": 100,
+          "high": 150
+        }
+      }
+    },
+    "25mg tablets or capsules (intended for adults)" : {
+      "weights" : {
+        "1 tablets (only use if child is 12+ years old)": {
+          "low": 50,
+          "high": 99
+        },
+        "2 tablets (only use if child is 12+ years old)": {
+          "low": 100,
           "high": 150
         }
       }
